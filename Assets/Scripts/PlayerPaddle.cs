@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerPaddle : MonoBehaviour
 {
@@ -14,12 +15,12 @@ public class PlayerPaddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(Vector2.up * speed * Time.deltaTime);
     }
 
-    public void Move()
+    public void OnMove(InputValue value)
     {
-        
+      directionInput = value.Get<Vector2>();  
     }
     
 }
