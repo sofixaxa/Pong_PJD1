@@ -15,7 +15,7 @@ public class PlayerPaddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        transform.Translate(Vector2.up * directionInput * speed * Time.deltaTime);
     }
 
     public void OnMove(InputValue value)
